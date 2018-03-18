@@ -1,10 +1,12 @@
 package com.company;
 
+import java.text.DecimalFormat;
+
 public class Item {
     String name;
     double price;
     int quantity;
-
+    DecimalFormat df = new DecimalFormat("#.00");
     public Item(String name, double price, int quantity){
         this.name = name;
         this.price = price;
@@ -24,8 +26,9 @@ public class Item {
         return quantity;
     }
 
+    @Override
     public String toString(){
-        String s = "Item: " + name + "\rQuantity: " + quantity + "\rPrice: " + price;
+        String s = name + "\t\t$" + df.format(price) + "\t\t\t" + quantity;
         return s;
     }
 

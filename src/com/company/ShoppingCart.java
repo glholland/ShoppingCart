@@ -36,15 +36,25 @@ public class ShoppingCart {
     }
 
     public double getCartTotal(){
-        for(int i =0; i < cart.length; i++){
-            totalPrice =+ cart[i].getQuantity() * cart[i].getPrice();
+        totalPrice = 0.0;
+        for(Item i : cart){
+            if(i == null){
+                break;
+            }
+            totalPrice += i.getPrice() * i.getQuantity();
         }
         return totalPrice;
     }
 
     @Override
     public String toString() {
-        String s = cart.toString();
-        return s;
+        String s = "";
+        for(int i = 0; i < cart.length; i++){
+            if(cart[i] == null){
+                break;
+            }
+            System.out.print(cart[i]);
+            System.out.print("\n");
+        }return s;
     }
 }
