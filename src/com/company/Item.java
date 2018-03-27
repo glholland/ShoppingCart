@@ -6,7 +6,9 @@ public class Item {
     String name;
     double price;
     int quantity;
+
     DecimalFormat df = new DecimalFormat("#.00");
+
     public Item(String name, double price, int quantity){
         this.name = name;
         this.price = price;
